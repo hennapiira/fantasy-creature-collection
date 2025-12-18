@@ -47,6 +47,7 @@ bool userRegister() {
 
         // Attempt to add user to database
         if (dbMethods.addUser(username, hashed_password)) {
+            current_user_id = dbMethods.getUserId(username); // Store user ID
             cout << "\nUser registered successfully!\n";
             register_succeeded = true;
             break;
